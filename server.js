@@ -11,12 +11,9 @@ app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-  res.send({
-    name: 'Jassem',
-    works: [
-      'my site',
-      'my porfolio'
-    ]
+  res.render('home.hbs', {
+    creator: "Jassem Al-Buloushi",
+    currentYear: new Date().getFullYear()
   });
 });
 
