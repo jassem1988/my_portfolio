@@ -4,8 +4,8 @@ const express = require('express'),
 
 var app = express();
 
-// Set express to use hbs in the views dir
-app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views/partials'); //Let hbs use partials
+app.set('view engine', 'hbs'); // Set express to use hbs in the views dir
 
 //let express use /public folder
 app.use(express.static(__dirname + '/public'));
