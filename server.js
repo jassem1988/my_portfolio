@@ -2,6 +2,8 @@
 const express = require('express'),
       hbs     = require('hbs');
 
+const port = process.env.PORT || 4000;  //to connect to heroku OR locol host
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials'); //Let hbs use partials
@@ -17,6 +19,6 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(4000, () => {
-  console.log('Server is up on port 4000');
+app.listen(port, () => {
+  console.log(`'Server is up on port ${port}'`);
 });
